@@ -7,9 +7,13 @@
 (setq org-todo-keywords
       '((sequence "TODO" "|" "DONE(d!)")
         (sequence "RECORD(r)" "|" "HAPPENED")
+        (sequence "OPTIONAL(o)" "|" "DONE(d!)")
         (sequence "|" "CANCELED(c@)")))
 (setq org-todo-keyword-faces
- '(("RECORD" . (:foreground "gold" :weight bold)))
+ '(
+   ("RECORD" . (:foreground "gold" :weight bold))
+   ("OPTIONAL" . (:foreground "aqua" :weight bold))
+   )
  )
 
 ; awesome plugin
