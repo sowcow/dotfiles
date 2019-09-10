@@ -33,7 +33,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'         " act - comment
 Plug 'pangloss/vim-javascript'          " good looks
-Plug 'mxw/vim-jsx'                    " good looks
+"Plug 'mxw/vim-jsx'                    " good looks
+Plug 'MaxMEllon/vim-jsx-pretty'                    " good looks
 Plug 'vim-ruby/vim-ruby'                " good looks
 Plug 'leafgarland/typescript-vim'       " good looks
 Plug 'wavded/vim-stylus'                " good looks
@@ -118,7 +119,7 @@ au BufNewFile,BufRead *.rb map , :w<cr>:!ruby %<cr>
 """
 """
 """"au BufNewFile,BufRead *.clj map , :w<cr>:!clojure %<cr>
-""""au BufNewFile,BufRead Rakefile map , :w<cr>:!rake<cr>
+au BufNewFile,BufRead Rakefile map , :w<cr>:!rake<cr>
 """"au BufNewFile,BufRead *.sh map , :w<cr>:!bash %<cr>
 """"map <C-,> :A<cr>
 """""au BufNewFile,BufRead *.js map ; yawIlet <esc>A = this.get('')<esc>hhp

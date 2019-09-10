@@ -1,3 +1,5 @@
+(set-frame-font "Inconsolata 18" nil t)
+
 ; nice defaults and appearance
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
