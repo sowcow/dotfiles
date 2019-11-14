@@ -115,7 +115,7 @@ au BufNewFile,BufRead *.rb map , :w<cr>:!ruby %<cr>
 """
 """
 """
-"""""au BufNewFile,BufRead *.js map , :w<cr>:!node %<cr>
+au BufNewFile,BufRead *.js map , :w<cr>:!node %<cr>
 """
 """
 """"au BufNewFile,BufRead *.clj map , :w<cr>:!clojure %<cr>

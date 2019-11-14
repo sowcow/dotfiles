@@ -7,9 +7,9 @@
 (setq inhibit-startup-screen t)
 (add-hook 'org-mode-hook 'org-indent-mode)
 (setq org-todo-keywords
-      '((sequence "TODO" "|" "DONE(d!)")
+      '((sequence "TODO" "|" "DONE(d)")
         (sequence "RECORD(r)" "|" "HAPPENED")
-        (sequence "OPTIONAL(o)" "|" "DONE(d!)")
+        (sequence "OPTIONAL(o)" "|" "DONE(d)")
         (sequence "|" "CANCELED(c@)")))
 (setq org-todo-keyword-faces
  '(
