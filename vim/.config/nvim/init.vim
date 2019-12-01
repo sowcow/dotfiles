@@ -7,7 +7,7 @@ let g:UltiSnipsListSnippets="<c-t>"
 :imap <c-s> <Esc>:w<CR>a
 
 Plug 'morhetz/gruvbox'
-"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Snippets!
 Plug 'SirVer/ultisnips'
@@ -120,6 +120,9 @@ au BufNewFile,BufRead *.js map , :w<cr>:!node %<cr>
 """
 """"au BufNewFile,BufRead *.clj map , :w<cr>:!clojure %<cr>
 au BufNewFile,BufRead Rakefile map , :w<cr>:!rake<cr>
+au BufNewFile,BufRead *.rs map , :w<cr>:!cargo run<cr>
+au BufNewFile,BufRead *.dot map , :w<cr>:!dot -Tpng % -o %.png<cr>
+au BufNewFile,BufRead *.fish map , :w<cr>:!source %<cr>
 """"au BufNewFile,BufRead *.sh map , :w<cr>:!bash %<cr>
 """"map <C-,> :A<cr>
 """""au BufNewFile,BufRead *.js map ; yawIlet <esc>A = this.get('')<esc>hhp
