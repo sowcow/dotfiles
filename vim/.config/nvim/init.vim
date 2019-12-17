@@ -13,7 +13,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-" Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -24,6 +24,27 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion = 3
 
+" fmt/lint
+Plug 'w0rp/ale'
+let g:ale_fixers = {'javascript': ['prettier_standard']}
+let g:ale_linters = {'javascript': ['']}
+let g:ale_fix_on_save = 1
+
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+"Plug 'Shougo/neco-syntax'
+
+Plug 'carlitux/deoplete-ternjs'
+", { 'do': 'npm install -g tern' }
+
+Plug 'posva/vim-vue'  " trying it
 
 Plug 'sakshamgupta05/vim-todo-highlight' " saner highliting
 
@@ -49,10 +70,10 @@ Plug 'racer-rust/vim-racer'  " rust active perfomance
 Plug 'tpope/vim-projectionist'          " navigate
 "
 "Plug 'karthikv/tradeship-vim'           " js active perfomance
-Plug 'Galooshi/vim-import-js'
+"Plug 'Galooshi/vim-import-js'
 "
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 
 
 call plug#end()
@@ -194,8 +215,10 @@ au BufNewFile,BufRead *.fish map , :w<cr>:!source %<cr>
 """
 """
 
+let g:js_file_import_omit_semicolon = 1
 
 " let g:todo_highlight_disable_default = ['TODO', 'FIXME']
+
 
 let g:todo_highlight_config = {
       \   'TODO': {},
@@ -207,3 +230,17 @@ let g:todo_highlight_config = {
       \     'cterm_bg_color': '214'
       \   }
       \ }
+
+set wildignore=*.o,*.obj,*~
+set wildignore+=*.git*
+set wildignore+=*.meteor*
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*cache*
+set wildignore+=*logs*
+set wildignore+=*node_modules/**
+set wildignore+=*DS_Store*
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
