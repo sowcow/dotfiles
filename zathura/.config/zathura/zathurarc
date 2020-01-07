@@ -3,3 +3,5 @@ set recolor-darkcolor "#dcdccc"
 set recolor-lightcolor "#1f1f1f"
 set window-title-basename "true"
 set selection-clipboard "clipboard"
+
+set guioptions none

@@ -25,10 +25,10 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsUsePythonVersion = 3
 
 " fmt/lint
-Plug 'w0rp/ale'
-let g:ale_fixers = {'javascript': ['prettier_standard']}
-let g:ale_linters = {'javascript': ['']}
-let g:ale_fix_on_save = 1
+" Plug 'w0rp/ale'
+" let g:ale_fixers = {'javascript': ['prettier_standard']}
+" let g:ale_linters = {'javascript': ['']}
+" let g:ale_fix_on_save = 1
 
 
 if has('nvim')
@@ -55,9 +55,14 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'         " act - comment
 Plug 'pangloss/vim-javascript'          " good looks
 "Plug 'mxw/vim-jsx'                    " good looks
-Plug 'MaxMEllon/vim-jsx-pretty'                    " good looks
+
+"Plug 'MaxMEllon/vim-jsx-pretty'                    " good looks
+" it fucks with typescript indenting
+
 Plug 'vim-ruby/vim-ruby'                " good looks
-Plug 'leafgarland/typescript-vim'       " good looks
+"Plug 'leafgarland/typescript-vim'       " good looks
+"let g:typescript_indent_disable = 1 "wtf
+
 Plug 'wavded/vim-stylus'                " good looks
 Plug 'mustache/vim-mustache-handlebars' " good looks
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }  " good looks
@@ -104,7 +109,11 @@ au BufNewFile,BufRead *.css map , :A<cr>
 au BufNewFile,BufRead *.hbs map , :A<cr>
 
 au BufNewFile,BufRead *.rb map , :w<cr>:!ruby %<cr>
+au BufNewFile,BufRead *.R map , :w<cr>:!Rscript %<cr>
+au BufNewFile,BufRead *.ts map , :w<cr>:!ts-node %<cr>
 
+au BufNewFile,BufRead *.ts :set sw=4
+au BufNewFile,BufRead *.ts :set ts=4
 
 """filetype off
 """" append to runtime path
