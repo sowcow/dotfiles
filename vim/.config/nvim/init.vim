@@ -110,10 +110,11 @@ au BufNewFile,BufRead *.hbs map , :A<cr>
 
 au BufNewFile,BufRead *.rb map , :w<cr>:!ruby %<cr>
 au BufNewFile,BufRead *.R map , :w<cr>:!Rscript %<cr>
-au BufNewFile,BufRead *.ts map , :w<cr>:!ts-node %<cr>
+" au BufNewFile,BufRead *.ts map , :w<cr>:!ts-node %<cr>
+au BufNewFile,BufRead *.ts map , :w<cr>:!swc % -C jsc.parser.syntax=typescript -C module.type=commonjs -o _build.js && node _build.js<cr>
 
-au BufNewFile,BufRead *.ts :set sw=4
-au BufNewFile,BufRead *.ts :set ts=4
+" au BufNewFile,BufRead *.ts :set sw=4
+" au BufNewFile,BufRead *.ts :set ts=4
 
 """filetype off
 """" append to runtime path
