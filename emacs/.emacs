@@ -15,9 +15,31 @@
 ;NOTE: manual stuff
 ;M-xpackage-refresh-contents
 ;M-x package-install <RET> dracula-theme
-(load-theme 'dracula t)
+; (load-theme 'dracula t)
+(load-theme 'gruvbox t)
 
-(set-frame-font "Inconsolata 18" nil t)
+;(set-frame-font "Inconsolata 18" nil t)
+; (set-frame-font "TerminessTTF Nerd Font 20" nil t)
+(set-frame-font "xos4 terminus 18" nil t)
+
+
+;(global-set-key '[8711] 'Control-X-prefix)
+;(global-set-key (kbd "<f6> h") (lambda () (interactive) (find-file "~/.emacs.d/lisp/init_hooks.el")))
+(global-set-key '[8711] (lambda () (interactive) (find-file "~/MY/org/time.org")))
+
+(global-set-key (quote [f1]) (quote save-buffer))
+(global-set-key (quote [f2]) (quote save-buffer))
+(global-set-key (quote [f3]) (quote save-buffer))
+(global-set-key (quote [f4]) (quote save-buffer))
+(global-set-key (quote [f5]) (quote save-buffer))
+(global-set-key (quote [f6]) (quote save-buffer))
+(global-set-key (quote [f7]) (quote save-buffer))
+(global-set-key (quote [f8]) (quote save-buffer))
+
+(global-set-key (quote [f9]) (quote save-buffers-kill-terminal))
+(global-set-key (quote [f10]) (quote save-buffers-kill-terminal))
+(global-set-key (quote [f11]) (quote save-buffers-kill-terminal))
+(global-set-key (quote [f12]) (quote save-buffers-kill-terminal))
 
 ; nice defaults and appearance
 (global-set-key (kbd "C-c l") 'org-store-link)
@@ -26,10 +48,11 @@
 (setq inhibit-startup-screen t)
 (add-hook 'org-mode-hook 'org-indent-mode)
 (setq org-todo-keywords
-      '((sequence "TODO" "|" "DONE(d)")
-        (sequence "RECORD(r)" "|" "HAPPENED")
-        (sequence "OPTIONAL(o)" "|" "DONE(d)")
-        (sequence "|" "CANCELED(c@)")))
+      ; '((sequence "TODO" "|" "DONE(d)")
+      '((sequence "|" "DONE(d)" "NOPE(n)")))
+        ; (sequence "RECORD(r)" "|" "HAPPENED")
+        ; (sequence "OPTIONAL(o)" "|" "DONE(d)")
+        ; (sequence "|" "NOPE(n@)")))
 (setq org-todo-keyword-faces
  '(
    ("RECORD" . (:foreground "gold" :weight bold))
@@ -95,7 +118,8 @@ If FILEXT is provided, return files with extension FILEXT instead."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/MY/org/current.org" "~/MY/org/input.org" "~/MY/org/context.org"))))
+    ("~/MY/org/current.org" "~/MY/org/input.org" "~/MY/org/context.org")))
+ '(package-selected-packages (quote (gruvbox-theme dracula-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
